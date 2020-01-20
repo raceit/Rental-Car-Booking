@@ -1,0 +1,55 @@
+
+
+<html>
+<head>
+<title>Login</title>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+ crossorigin="anonymous">
+{% load static %}
+<link rel="stylesheet" href="{% static 'car/style.css' %}" type="text/css">
+{% load staticfiles %} <!-- Prepare django to load static files -->
+
+<link type="text/css" href="/{ProjectName}/css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="/{ProjectName}/js/jquery-x.x.x.custom.min.js"></script>
+
+<link type="text/css" href="/{ProjectName}/css/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="/{ProjectName}/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<center><img src={% static "ceatlogo.jpg" %} ></center>
+<body id="bg" style="background-image: url('{% static "car2.jpg"%}')";>
+<br>
+      <div class="container">
+        <nav class="navbar navbar-expand-sm bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="/">CEAT</a>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" >Car Booking</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+<br>
+<div class ="jumbotron">
+<h1>Welcome!</h1>
+</div>
+<h3>You can login here!</h3>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+<button type="submit" class="btn btn-success" name="button">Login</button>
+
+  
+</body>
+</html>

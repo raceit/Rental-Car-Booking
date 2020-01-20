@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+ crossorigin="anonymous">
+<style>
+body {
+background-color : #00FFFF;
+}
+</style>
+</head>
+<body>
+<form class="carbookingform" method="post" action="/car/car_booking_submission/">
+{% csrf_token %}
+<br>
+      <div class="container">
+        <nav class="navbar navbar-expand-sm bg-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" >CEAT</a>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+	<a class="nav-link" href="/car/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+<br>
+<div class="container">
+	<h3>Welcome  {{ user }}</h3>
+
+</div>
+<p style="border:5px;border-style:solid;border-color:#4B0082;padding:1em; height:380px; width:1000px ;margin:5% auto">
+&nbsp
+<label for="Rdetails"><b>Requester Details</b> </label>
+<br>
+<br>
+&nbsp<label for="sapno">SAP No:: </label>
+&nbsp
+&nbsp
+&nbsp
+&nbsp<input id="sapno" type="number" name="sapno"  required>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<label for="your_name">Requested by:: </label>
+&nbsp
+&nbsp<input id="your_name" type="text" name="your_name" maxlength="100" required>
+<br>
+<br>
+
+&nbsp<label for="mobileNumber">Mobile No:: </label>
+&nbsp
+&nbsp<input id="mobileNumber" type="number" name="mobileNumber"  required>
+&nbsp
+&nbsp
+&nbsp
+<label for="companyName">Company Name:: </label>
+&nbsp
+&nbsp
+&nbsp<input id="companyName" type="text" name="companyName" maxlength="100" required>
+<br>
+<br>
+
+
+&nbsp<label for="costCentre">Cost Centre:: </label>
+&nbsp<input id="costCentre" type="text" name="costCentre" maxlength="100" required>
+&nbsp 
+&nbsp
+<label for="debitTo">Debit To:: </label>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp<input id="debitTo" type="text" name="debitTo" maxlength="100" required>
+<br>
+<br>
+            
+&nbsp<label for="departmnet">Departmnet:: </label>
+<input id="departmnet" type="text" name="departmnet" maxlength="100" required>
+&nbsp 
+&nbsp
+<label for="designation">Designation:: </label>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+
+&nbsp<input id="designation" type="text" name="designation" maxlength="100" required>
+<br>
+<br>
+
+&nbsp<label for="grade">Grade:: </label>
+<select name="grade" form="grade">
+   <option value="VP&above">VP & above</option>
+  <option value="m1">m1</option>
+  <option value="m2">m2</option>
+ <option value="m3">m3</option>
+ <option value="m4&trainees">m4 & trainees</option>
+  </select>
+<br>
+<br>
+
+<p style="border:3px;border-style:solid;border-color:#4B0082;padding:1em; height:680px; width:1000px; margin:5% auto">
+&nbsp<label for="Bdetails"><b>Booking Details</b> </label>
+<br>
+<br>
+&nbsp<label for="rentalcity">Rental city:: </label>
+<input id="rentalcity" type="text" name="rentalcity" maxlength="100" required>
+&nbsp 
+&nbsp
+&nbsp
+<label for="rentaltype">Rental type:: </label>
+
+<select name="rentaltype" form="rentaltype">
+   <option value="pickanddrop">Pick and drop</option>
+  <option value="fullday">Full day</option>
+  <option value="outstation">Outstation</option>
+  </select>
+<br>
+<br>
+
+&nbsp<label for="from">From::</label>
+&nbsp
+&nbsp
+&nbsp
+&nbsp<input id="date" type="date" name="date" required>
+&nbsp 
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<label for="to">To::</label>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp<input id="date2" type="date" name="date2" required>
+<br>
+<br>
+
+&nbsp<label for="time">Reporting Time::</label>
+<input id="time" type="time" name="time" required>
+<br>
+<br>
+&nbsp<label for="carType">Car type:: </label>
+<select name="carType" form="carType">
+   <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  </select>
+&nbsp
+&nbsp
+&nbsp 
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp 
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp 
+&nbsp
+&nbsp
+<label for="noOfCars">No. Of Cars:: </label>
+<input id="noOfCars" type="number" name="noOfCars"  required>
+<br>
+<br>
+
+&nbsp<label for="repAddress">Reporting Address:: </label>
+<br>
+ <textarea rows = "5" cols = "60" name = "repAddress">
+  Enter details here...
+ </textarea>
+<br>
+<br>
+
+&nbsp<label for="finalAddress">Final Address:: </label>
+<br>
+ <textarea rows = "5" cols = "60" name = "finalAddress">
+  Enter details here...
+ </textarea>
+<br>
+<br>
+
+<p style="border:3px;border-style:solid;border-color:#4B0082;padding:1em; height:300px; width:1000px; margin:5% auto">
+&nbsp<label for="Gdetails"><b>Guest Details</b> </label>
+<br>
+<br>
+
+&nbsp<label for="guestsapno">SAP No:: </label>
+<input id="guestsapno" type="number" name="guestsapno">
+&nbsp
+&nbsp
+&nbsp 
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<label for="guestType">Guest type:: </label>
+<select name="guestType" form="guestType" required>
+   <option value="ceat">CEAT</option>
+  <option value="dealer">Dealer</option>
+  <option value="nonceat">NON CEAT</option>
+  </select>
+<br>
+<br>
+
+&nbsp<label for="guestname">Guest Name:: </label>
+<input id="guestname" type="text" name="guestname" maxlength="100" required>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<label for="guestgrade">Grade:: </label>
+<select name="grade" form="grade">
+   <option value="VP&above">VP & above</option>
+  <option value="m1">m1</option>
+  <option value="m2">m2</option>
+ <option value="m3">m3</option>
+ <option value="m4&trainees">m4 & trainees</option>
+  </select>
+<br>
+<br>
+
+&nbsp<label for="guestmobileNumber">Mobile No:: </label>
+<input id="guestmobileNumber" type="number" name="guestmobileNumber"  required>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<label for="guestdesignation">Designation:: </label>
+<input id="guestdesignation" type="text" name="guestdesignation" maxlength="100" required>
+<br>
+<br>
+
+&nbsp<label for="email">Email:: </label>
+<input type="email" name="email" id="email" required>
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<label for="location">Location:: </label>
+<input id="location" type="text" name="location" maxlength="100" required>
+<br>
+<br>
+
+
+<p style="border:3px;border-style:solid;border-color:#4B0082;padding:1em; height:200px; width:1000px; margin:5% auto">
+&nbsp<label for="outstationdetails"><b>Outstation Details</b> </label>
+<br>
+<br>
+
+&nbsp<label for="pickupPoint">Pickup Point:: </label>
+<input id="pickupPoint" type="text" name="pickupPoint" maxlength="100" >
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+<label for="dropPoint">Drop Point:: </label>
+<input id="dropPoint" type="text" name="dropPoint" maxlength="100" >
+<br>
+<br>
+
+
+&nbsp<label for="journeyType">Journey Type:: </label><br>
+ &nbsp<input type="radio" name="journeyType" value="return" checked> Return
+ &nbsp
+&nbsp
+&nbsp
+&nbsp<input type="radio" name="journeyType" value="oneway"> One way<br>
+ <br>
+
+
+<p style="border:3px;border-style:solid;border-color:#4B0082;padding:1em; height:700px; width:1000px; margin:5% auto">
+&nbsp<label for="otherdetails"><b>Other Details</b> </label>
+<br>
+<br>
+ 
+&nbsp<label for="otherDetails">Flight or Train Details:: </label>
+<br>
+ <textarea rows = "5" cols = "60" name = "otherDetails">
+  Enter details here...
+ </textarea>
+<br>
+<br>
+
+&nbsp<label for="instructions">Special instructions:: </label>
+<br>
+ <textarea rows = "5" cols = "60" name = "instructions">
+  Enter details here...
+ </textarea>
+<br>
+<br>
+
+&nbsp<label for="reason"> Reason for Booking:: </label>
+<br>
+ <textarea rows = "5" cols = "60" name = "reason">
+  Enter details here...
+ </textarea>
+<br>
+<br>
+
+&nbsp<button type= "submit" class="btn btn-success" >Submit</button>
+
+
+</form>
+
+</body>
+</html>
